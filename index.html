@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MiwArtGallery</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow-x: hidden; }
+    body {
+      background-color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+    header {
+      height: 100vh;
+      background: url('custom_bg.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      perspective: 1px;
+      transform-style: preserve-3d;
+    }
+    header h1 {
+      font-size: 4rem;
+      color: #ffffffdd;
+      text-shadow: 2px 2px 10px #000;
+      z-index: 2;
+      animation: fadeIn 2s ease-out forwards;
+    }
+    .gallery {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px;
+      gap: 120px;
+    }
+    .gallery img {
+      width: 80%;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      animation: float 6s ease-in-out infinite alternate;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .gallery img:nth-child(even) { animation-delay: 1.5s; }
+    .ambient {
+      position: fixed;
+      width: 300px;
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.2) 80%, transparent 100%);
+      mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.2) 80%, transparent 100%);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+    }
+    .top-left { top: 20px; left: 20px; }
+    .top-right { top: 20px; right: 20px; }
+    .bottom-left { bottom: 20px; left: 20px; }
+    .bottom-right { bottom: 20px; right: 20px; }
+    .center-left { top: 50%; left: 0; transform: translateY(-50%); }
+    .center-right { top: 50%; right: 0; transform: translateY(-50%); }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+      background: #111;
+      font-size: 0.9rem;
+      z-index: 2;
+      position: relative;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-20px); }
+    }
+    
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(circle 150px at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.08), transparent 80%);
+  z-index: 1;
+}
+.gallery img:hover {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2), 0 0 80px rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MiwArtGallery</h1>
+  </header>
+
+  
+<audio autoplay loop>
+  <source src="ambient_music.m4a" type="audio/mp4">
+</audio>
+
+<video class="ambient top-left" autoplay muted loop playsinline>
+  <source src="Lilith.MP4" type="video/mp4">
+</video>
+<video class="ambient top-right" autoplay muted loop playsinline>
+  <source src="me and the devil.MP4" type="video/mp4">
+</video>
+<video class="ambient bottom-left" autoplay muted loop playsinline>
+  <source src="My room.MP4" type="video/mp4">
+</video>
+<video class="ambient bottom-right" autoplay muted loop playsinline>
+  <source src="Shoes.mov" type="video/mp4">
+</video>
+<video class="ambient center-right" autoplay muted loop playsinline>
+  <source src="The spiral.mov" type="video/mp4">
+</video>
+<video class="ambient center-left" autoplay muted loop playsinline>
+  <source src="doodle_story.mov" type="video/mp4">
+</video>
+<video class="ambient bottom-left" autoplay muted loop playsinline>
+  <source src="bottom_left_fill.mov" type="video/mp4">
+</video>
+
+
+<video class="ambient top-left" autoplay muted loop playsinline>
+  <source src="Lilith.MP4" type="video/mp4">
+</video>
+<video class="ambient top-right" autoplay muted loop playsinline>
+  <source src="me and the devil.MP4" type="video/mp4">
+</video>
+<video class="ambient bottom-left" autoplay muted loop playsinline>
+  <source src="My room.MP4" type="video/mp4">
+</video>
+<video class="ambient bottom-right" autoplay muted loop playsinline>
+  <source src="Shoes.mov" type="video/mp4">
+</video>
+<video class="ambient center-left" autoplay muted loop playsinline>
+  <source src="The doodle story.mov" type="video/mp4">
+</video>
+<video class="ambient center-right" autoplay muted loop playsinline>
+  <source src="The spiral.mov" type="video/mp4">
+</video>
+  <div class="gallery">
+    <img src="cropped_page_2.jpg" alt="Artwork">
+    <img src="cropped_page_3.jpg" alt="Artwork">
+    <img src="cropped_page_4.jpg" alt="Artwork">
+    <img src="cropped_page_5.jpg" alt="Artwork">
+    <img src="cropped_page_6.jpg" alt="Artwork">
+    <img src="cropped_page_7.jpg" alt="Artwork">
+    <img src="cropped_page_8.jpg" alt="Artwork">
+    <img src="cropped_page_9.jpg" alt="Artwork">
+    <img src="cropped_page_10.jpg" alt="Artwork">
+
+  </div>
+<footer>
+  &copy; 2025 MiwArtGallery | Dreamscaped by Meera.
+  <br><br>
+  <a href="https://www.linkedin.com/in/meerawadera/" target="_blank" style="color:#ccc; text-decoration:underline;">
+    Connect with me on LinkedIn
+  </a>
+</footer>
+  
+<script>
+document.addEventListener("mousemove", e => {
+  document.body.style.setProperty('--x', e.clientX + 'px');
+  document.body.style.setProperty('--y', e.clientY + 'px');
+});
+</script>
+
+</body>
+</html>
