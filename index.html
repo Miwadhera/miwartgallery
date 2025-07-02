@@ -184,5 +184,41 @@ document.addEventListener("mousemove", e => {
 });
 </script>
 
+<button id="playButton" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.05);
+  color: #ccc;
+  border: 1px solid #555;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s, color 0.3s;
+">
+  🔊 Play Music
+</button>
+
+<script>
+  const playBtn = document.getElementById("playButton");
+  const audio = new Audio("ambient_music.m4a");
+  let playing = false;
+  playBtn.addEventListener("click", () => {
+    if (!playing) {
+      audio.loop = true;
+      audio.play();
+      playing = true;
+      playBtn.innerText = "⏸️ Pause Music";
+    } else {
+      audio.pause();
+      playing = false;
+      playBtn.innerText = "🔊 Play Music";
+    }
+  });
+</script>
+
 </body>
 </html>
